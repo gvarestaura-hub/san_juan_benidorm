@@ -617,7 +617,7 @@
 
   /* ─── CONCLUSIONS ─── */
   .conclusions-grid {
-    display: grid; grid-template-columns: 1fr 1fr;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1px; background: var(--border);
     border: 1px solid var(--border);
     margin-top: 2rem;
@@ -639,6 +639,73 @@
   .conclusion-title { font-size: 0.9rem; font-weight: 700; color: var(--blue); margin-bottom: 0.5rem; }
   .conclusion-text  { font-size: 0.85rem; color: var(--muted); line-height: 1.7; }
   @media (max-width: 640px) { .conclusions-grid { grid-template-columns: 1fr; } }
+
+  /* ─── MATERIALS / STRATIGRAPHY SAMPLES ─── */
+  .samples-table {
+    width: 100%; border-collapse: collapse; margin-top: 2rem;
+    font-size: 0.85rem;
+  }
+  .samples-table th {
+    background: var(--blue); color: #fff;
+    text-align: left; padding: 0.7rem 1rem;
+    font-size: 0.72rem; font-weight: 700;
+    letter-spacing: 0.06em; text-transform: uppercase;
+  }
+  .samples-table td {
+    padding: 0.7rem 1rem; border-bottom: 1px solid var(--border);
+    color: var(--text);
+  }
+  .samples-table tr:nth-child(even) td { background: var(--bg-light); }
+  .samples-table td:first-child { font-weight: 700; color: var(--blue); white-space: nowrap; }
+
+  .sample-card {
+    border: 1px solid var(--border);
+    margin-top: 2.5rem;
+    background: var(--white);
+  }
+  .sample-head {
+    background: var(--blue); color: #fff;
+    padding: 0.9rem 1.4rem;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 0.5rem;
+  }
+  .sample-code {
+    font-family: 'Merriweather', serif;
+    font-size: 1.05rem; font-weight: 700;
+  }
+  .sample-desc { font-size: 0.78rem; color: rgba(255,255,255,0.75); }
+  .sample-body { padding: 1.6rem; }
+  .sample-photos {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1px; background: var(--border); border: 1px solid var(--border);
+    margin-bottom: 1.6rem;
+  }
+  .sample-photos figure { background: var(--white); }
+  .sample-photos img { width: 100%; cursor: zoom-in; }
+  .sample-photos figcaption {
+    font-size: 0.65rem; color: var(--muted); text-align: center;
+    padding: 0.4rem; border-top: 1px solid var(--border);
+  }
+  .strata-list { margin-top: 0.5rem; }
+  .strata-row {
+    display: grid; grid-template-columns: 28px 1fr;
+    gap: 0.8rem; padding: 0.55rem 0;
+    border-bottom: 1px dashed var(--border);
+    font-size: 0.85rem; align-items: start;
+  }
+  .strata-row:last-child { border-bottom: none; }
+  .strata-idx {
+    width: 24px; height: 24px; border-radius: 50%;
+    background: var(--blue-light); color: var(--blue);
+    font-size: 0.72rem; font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .sem-note {
+    margin-top: 1.2rem; padding: 1rem 1.2rem;
+    background: var(--bg-light); border-left: 3px solid var(--orange);
+    font-size: 0.83rem; color: var(--text); line-height: 1.65;
+  }
+  .sem-note strong { color: var(--blue); }
 
   /* ─── LIGHTBOX ─── */
   .lightbox {
@@ -714,6 +781,7 @@
     <li><a href="#imagenes">Imágenes</a></li>
     <li><a href="#paleta">Pigmentos</a></li>
     <li><a href="#pintura-oculta">Figura oculta</a></li>
+    <li><a href="#materiales">Materiales</a></li>
     <li><a href="#conclusiones">Conclusiones</a></li>
   </ul>
 </nav>
@@ -1068,6 +1136,234 @@
       <p>La superposición de los cuatro mapas confirma que la figura subyacente fue ejecutada con la misma técnica que la obra visible: <strong>albayalde (Pb) en las luces</strong>, <strong>tierras de hierro y manganeso (Fe, Mn) en las sombras</strong>, y <strong>bermellón (Hg) en los labios</strong>. Esta coherencia técnica sugiere que ambas obras son del mismo período y posiblemente del mismo taller o artista.</p>
     </div>
   </div>
+
+  <!-- BLOQUE 4: Mapa brazo - Cu / Azurita -->
+  <div class="reveal" style="margin-top:3rem;">
+    <div class="subsection-title" style="margin-bottom: 1.2rem;">4 · Cartografía elemental EDXRF · Zona «mapa brazo» (88 × 70 mm · 1 mm/píxel) — Vestimenta de la figura oculta</div>
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; margin-top:1.5rem;">
+      <div>
+        <div class="map-card" style="border:1px solid var(--border);" onclick="openLb('mapa_Cu.jpg', 'Distribución del Cobre (Cu) — Azurita en la vestimenta de la figura subyacente, zona de la axila derecha')">
+          <div class="map-header">
+            <span class="map-element" style="background:#2b3a8f;">Cu</span>
+            <span class="map-name">Cobre · CuKa1</span>
+          </div>
+          <img src="mapa_Cu.jpg" alt="Mapa de distribución del Cobre">
+          <div class="map-footer">Azurita — Señal difusa y homogénea, sin concentraciones puntuales</div>
+        </div>
+      </div>
+      <div>
+        <p style="font-size:0.9rem; color:var(--text); line-height:1.75; margin-bottom:1rem;">
+          En la zona de la <strong>axila derecha de San Juan Bautista</strong> el mapeo de cobre muestra una señal <strong>difusa y homogénea</strong>, sin concentraciones localizadas, compatible con una capa pictórica de <strong>azurita</strong> extensa que subyace a las capas superiores visibles.
+        </p>
+        <p style="font-size:0.9rem; color:var(--text); line-height:1.75;">
+          Esta distribución es coherente con los <strong>restos de una vestimenta</strong> de la figura oculta. Al correlacionar todos los mapas elementales (Pb, Fe, Mn, Hg, Cu) es posible reconstruir de forma aproximada la composición completa de la pintura subyacente.
+        </p>
+        <div class="compare-cell" style="border:1px solid var(--border); overflow:hidden; margin-top:1rem;">
+          <img src="zona_brazo_visible.jpg" alt="Imagen visible de la zona mapeada de la axila derecha" onclick="openLb(this.src, this.alt)" style="cursor:zoom-in;">
+        </div>
+        <div class="compare-label">Luz visible de la zona «mapa brazo» <span>— Axila derecha de San Juan Bautista</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BLOQUE 5: Reconstrucción de la pintura subyacente -->
+  <div class="reveal" style="margin-top:3rem;">
+    <div class="subsection-title" style="margin-bottom: 1.2rem;">5 · Reconstrucción hipotética de la pintura subyacente</div>
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; margin-top:1.5rem;">
+      <div class="compare-cell" style="border:1px solid var(--border); overflow:hidden;">
+        <img src="esquema_subyacente.jpg" alt="Esquema de reconstrucción de la pintura subyacente sobre la imagen radiográfica completa" onclick="openLb(this.src, this.alt)" style="cursor:zoom-in;">
+        <div class="compare-label">Esquema sobre la radiografía completa <span>— Carnación (Pb/Fe) y vestimenta de azurita (Cu)</span></div>
+      </div>
+      <div class="compare-cell" style="border:1px solid var(--border); overflow:hidden;">
+        <img src="esquema_rostro.jpg" alt="Esquema de reconstrucción del rostro de la figura subyacente" onclick="openLb(this.src, this.alt)" style="cursor:zoom-in;">
+        <div class="compare-label">Reconstrucción del rostro <span>— A partir de los mapas de Pb, Fe, Mn y Hg</span></div>
+      </div>
+    </div>
+    <p style="font-size:0.88rem; color:var(--muted); line-height:1.7; margin-top:1.2rem; max-width:75ch;">
+      La lectura conjunta de los mapas elementales permite reconstruir con notable coherencia la técnica empleada en la figura subyacente: el volumen del rostro se construye mediante la <strong style="color:var(--blue);">oposición de albayalde en las luces</strong> y <strong style="color:var(--blue);">tierras de hierro y manganeso en las sombras</strong>, con acentos localizados de bermellón en labios y mejillas. La vestimenta se resuelve con una amplia capa de azurita.
+    </p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- MATERIALS STUDY -->
+<section class="section-light" id="materiales">
+  <div class="section-header reveal">
+    <div class="section-kicker">Estudio de materiales · Informe 617/2025 · SEM-EDX y FTIR</div>
+    <h2 class="section-title">Estratigrafía y <strong>caracterización de pigmentos</strong></h2>
+    <p class="section-lead">Un segundo estudio, esta vez con micromuestras, ha analizado la secuencia estratigráfica completa de la obra mediante microscopía óptica y electrónica, confirmando y detallando la paleta identificada por EDXRF/Raman e incorporando un dato de conservación relevante: una <strong>intervención con capa intermedia de yeso</strong> presente en todas las muestras.</p>
+  </div>
+
+  <div class="tech-grid reveal" style="margin-bottom:0;">
+    <div class="tech-card">
+      <div class="tech-num">01</div>
+      <div class="tech-name">Microscopía digital</div>
+      <div class="tech-desc">Examen general de cada muestra y selección de fragmentos representativos para su estudio estratigráfico posterior.</div>
+      <div class="tech-equip">Leica DVM6A</div>
+    </div>
+    <div class="tech-card">
+      <div class="tech-num">02</div>
+      <div class="tech-name">Microscopía óptica de sección transversal</div>
+      <div class="tech-desc">Observación de las secciones con luz transmitida, reflejada, polarizada e iluminación UV para diferenciar estratos.</div>
+      <div class="tech-equip">Zeiss Axioscope 7 Vario · Cámara Zeiss Colibri 5</div>
+    </div>
+    <div class="tech-card">
+      <div class="tech-num">03</div>
+      <div class="tech-name">SEM-EDX</div>
+      <div class="tech-desc">Microscopía electrónica de barrido con microanálisis por dispersión de energías de rayos X para identificar elementos inorgánicos en cada estrato.</div>
+      <div class="tech-equip">Hitachi S-3400N · Bruker Quantax XFlash</div>
+    </div>
+    <div class="tech-card">
+      <div class="tech-num">04</div>
+      <div class="tech-name">FTIR-ATR</div>
+      <div class="tech-desc">Espectrometría de infrarrojos por transformada de Fourier para la determinación genérica de barnices y recubrimientos, sin preparación previa de la muestra.</div>
+      <div class="tech-equip">Bruker Tensor II · ATR diamante</div>
+    </div>
+  </div>
+
+  <table class="samples-table reveal">
+    <thead>
+      <tr><th>Código</th><th>Descripción</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>PC178.1</td><td>Pintura de tonalidad oscura — fondo, parte superior</td></tr>
+      <tr><td>PC178.2</td><td>Pintura de tonalidad parda — repinte del ojo</td></tr>
+      <tr><td>PC178.3</td><td>Pintura de tonalidad blanco-verdoso — cielo</td></tr>
+      <tr><td>PC178.5</td><td>Pintura de tonalidad pardo-rojiza — lienzo, veladura</td></tr>
+    </tbody>
+  </table>
+
+  <div class="note-box reveal" style="margin-top:2rem;">
+    <div class="note-box-label">Hallazgo de conservación común a todas las muestras</div>
+    <p>En <strong>todas las muestras</strong> se detecta una intervención mediante una <strong>capa intermedia de yeso</strong>, sobre la cual se aplicaron estratos pictóricos de repinte con albayalde, pigmentos tierra, azul esmalte, un pigmento a base de cobre y negro de huesos. En superficie se identifican <strong>dos estratos de barniz</strong>.</p>
+  </div>
+
+  <!-- MUESTRA PC178.1 -->
+  <div class="sample-card reveal">
+    <div class="sample-head">
+      <span class="sample-code">PC178.1</span>
+      <span class="sample-desc">Pintura de tonalidad oscura · Fondo, parte superior</span>
+    </div>
+    <div class="sample-body">
+      <div class="sample-photos">
+        <figure><img src="muestra1_extraccion.jpg" alt="Punto de extracción de la muestra PC178.1" onclick="openLb(this.src,this.alt)"><figcaption>Punto de extracción</figcaption></figure>
+        <figure><img src="muestra1_anverso_reverso.jpg" alt="Anverso y reverso de la muestra PC178.1" onclick="openLb(this.src,this.alt)"><figcaption>Anverso / reverso · 100X</figcaption></figure>
+        <figure><img src="muestra1_seccion_visible.jpg" alt="Sección estratigráfica de la muestra PC178.1 en luz visible" onclick="openLb(this.src,this.alt)"><figcaption>Sección · luz visible</figcaption></figure>
+        <figure><img src="muestra1_seccion_uv.jpg" alt="Sección estratigráfica de la muestra PC178.1 en luz ultravioleta" onclick="openLb(this.src,this.alt)"><figcaption>Sección · luz UV</figcaption></figure>
+      </div>
+      <div style="display:grid; grid-template-columns:1.1fr 0.9fr; gap:2rem;">
+        <div class="strata-list">
+          <div class="strata-row"><div class="strata-idx">1</div><div>Preparación rojiza elaborada con tierra roja.</div></div>
+          <div class="strata-row"><div class="strata-idx">2</div><div>Dos estratos pictóricos de la capa azul original, a base de albayalde mezclado con un pigmento azul orgánico.</div></div>
+          <div class="strata-row"><div class="strata-idx">3</div><div>Estrato de tonalidad grisácea, alterado estructural y cromáticamente, a base de <strong style="color:var(--blue);">azul esmalte</strong> con poco albayalde y carbonato de calcio.</div></div>
+          <div class="strata-row"><div class="strata-idx">4</div><div>Fino estrato muy orgánico de tonalidad oscura, con alta concentración de cobre — posible veladura.</div></div>
+          <div class="strata-row"><div class="strata-idx">5</div><div><strong style="color:var(--blue);">Estrato blanco de yeso</strong> — intervención posterior.</div></div>
+          <div class="strata-row"><div class="strata-idx">6</div><div>Fina capa pictórica de repinte, muy orgánica, con pigmentos tierra y carbonato de calcio.</div></div>
+          <div class="strata-row"><div class="strata-idx">7</div><div>Barniz.</div></div>
+        </div>
+        <div>
+          <div class="sample-photos" style="margin-bottom:0;">
+            <figure><img src="muestra1_sem_azulesmalte.jpg" alt="Imagen SEM y microanálisis EDX del pigmento azul esmalte, muestra PC178.1" onclick="openLb(this.src,this.alt)"><figcaption>SEM-EDX · azul esmalte</figcaption></figure>
+            <figure><img src="muestra1_sem_veladura.jpg" alt="Imagen SEM y microanálisis EDX de la posible veladura con cobre, muestra PC178.1" onclick="openLb(this.src,this.alt)"><figcaption>SEM-EDX · veladura (Cu)</figcaption></figure>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MUESTRA PC178.2 -->
+  <div class="sample-card reveal">
+    <div class="sample-head">
+      <span class="sample-code">PC178.2</span>
+      <span class="sample-desc">Pintura de tonalidad parda · Repinte del ojo</span>
+    </div>
+    <div class="sample-body">
+      <div class="sample-photos">
+        <figure><img src="muestra2_extraccion.jpg" alt="Punto de extracción de la muestra PC178.2, zona del ojo" onclick="openLb(this.src,this.alt)"><figcaption>Punto de extracción</figcaption></figure>
+        <figure><img src="muestra2_anverso.jpg" alt="Muestra PC178.2, imagen de microscopia digital" onclick="openLb(this.src,this.alt)"><figcaption>Microscopia digital · 125X</figcaption></figure>
+        <figure><img src="muestra2_seccion_visible.jpg" alt="Sección estratigráfica de la muestra PC178.2 en luz visible" onclick="openLb(this.src,this.alt)"><figcaption>Sección · luz visible</figcaption></figure>
+        <figure><img src="muestra2_seccion_uv.jpg" alt="Sección estratigráfica de la muestra PC178.2 en luz ultravioleta" onclick="openLb(this.src,this.alt)"><figcaption>Sección · luz UV</figcaption></figure>
+      </div>
+      <div style="display:grid; grid-template-columns:1.1fr 0.9fr; gap:2rem;">
+        <div class="strata-list">
+          <div class="strata-row"><div class="strata-idx">1</div><div>Preparación rojiza elaborada con tierra roja.</div></div>
+          <div class="strata-row"><div class="strata-idx">2</div><div>Tres estratos pictóricos muy orgánicos de tonalidad pardo-rojiza que conforman la capa original del ojo, con pigmentos tierra, laca roja y negro de hueso.</div></div>
+          <div class="strata-row"><div class="strata-idx">3</div><div><strong style="color:var(--blue);">Estrato blanco de yeso</strong> — intervención posterior.</div></div>
+          <div class="strata-row"><div class="strata-idx">4</div><div>Fina capa pictórica de repinte, de tonalidad oscura, con pigmentos tierra, negro de hueso y carbonato de calcio.</div></div>
+          <div class="strata-row"><div class="strata-idx">5</div><div>Dos estratos de barniz.</div></div>
+        </div>
+        <div class="sample-photos" style="margin-bottom:0; grid-template-columns:1fr;">
+          <figure><img src="muestra2_sem_ojo.jpg" alt="Imagen SEM y microanálisis EDX de la capa pictórica original del ojo, muestra PC178.2" onclick="openLb(this.src,this.alt)"><figcaption>SEM-EDX · capa original del ojo</figcaption></figure>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MUESTRA PC178.3 -->
+  <div class="sample-card reveal">
+    <div class="sample-head">
+      <span class="sample-code">PC178.3</span>
+      <span class="sample-desc">Pintura de tonalidad blanco-verdosa · Cielo</span>
+    </div>
+    <div class="sample-body">
+      <div class="sample-photos">
+        <figure><img src="muestra3_extraccion.jpg" alt="Punto de extracción de la muestra PC178.3, zona del cielo" onclick="openLb(this.src,this.alt)"><figcaption>Punto de extracción</figcaption></figure>
+        <figure><img src="muestra3_anverso.jpg" alt="Muestra PC178.3, imagen de microscopia digital" onclick="openLb(this.src,this.alt)"><figcaption>Microscopia digital · 110X</figcaption></figure>
+        <figure><img src="muestra3_seccion_visible.jpg" alt="Sección estratigráfica de la muestra PC178.3 en luz visible" onclick="openLb(this.src,this.alt)"><figcaption>Sección · luz visible</figcaption></figure>
+        <figure><img src="muestra3_seccion_uv.jpg" alt="Sección estratigráfica de la muestra PC178.3 en luz ultravioleta con numeración de estratos" onclick="openLb(this.src,this.alt)"><figcaption>Sección · luz UV (numerada)</figcaption></figure>
+      </div>
+      <div style="display:grid; grid-template-columns:1.1fr 0.9fr; gap:2rem;">
+        <div class="strata-list">
+          <div class="strata-row"><div class="strata-idx">1</div><div>Preparación rojiza elaborada con tierra roja.</div></div>
+          <div class="strata-row"><div class="strata-idx">2</div><div>Estrato anaranjado a base de albayalde mezclado con ocre amarillo y bermellón.</div></div>
+          <div class="strata-row"><div class="strata-idx">3</div><div>Estrato azulado a base de albayalde mezclado con un pigmento azul orgánico.</div></div>
+          <div class="strata-row"><div class="strata-idx">4</div><div>Barniz.</div></div>
+          <div class="strata-row"><div class="strata-idx">5</div><div>Estrato grisáceo, alterado estructural y cromáticamente, a base de <strong style="color:var(--blue);">azul esmalte</strong> con poco albayalde y carbonato de calcio.</div></div>
+          <div class="strata-row"><div class="strata-idx">6</div><div>Dos estratos de barniz.</div></div>
+        </div>
+        <div class="sample-photos" style="margin-bottom:0; grid-template-columns:1fr;">
+          <figure><img src="muestra3_sem_azulesmalte.jpg" alt="Imagen SEM y microanálisis EDX del pigmento azul esmalte, muestra PC178.3" onclick="openLb(this.src,this.alt)"><figcaption>SEM-EDX · azul esmalte</figcaption></figure>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MUESTRA PC178.5 -->
+  <div class="sample-card reveal">
+    <div class="sample-head">
+      <span class="sample-code">PC178.5</span>
+      <span class="sample-desc">Pintura de tonalidad pardo-rojiza · Extraída el 4 de noviembre de 2025 para verificar veladura</span>
+    </div>
+    <div class="sample-body">
+      <div class="sample-photos">
+        <figure><img src="muestra5_extraccion.jpg" alt="Punto de extracción de la muestra PC178.5" onclick="openLb(this.src,this.alt)"><figcaption>Punto de extracción</figcaption></figure>
+        <figure><img src="muestra5_anverso.jpg" alt="Anverso de la muestra PC178.5" onclick="openLb(this.src,this.alt)"><figcaption>Anverso · 110X</figcaption></figure>
+        <figure><img src="muestra5_seccion_visible.jpg" alt="Sección estratigráfica de la muestra PC178.5 en luz visible" onclick="openLb(this.src,this.alt)"><figcaption>Sección · luz visible</figcaption></figure>
+        <figure><img src="muestra5_seccion_uv.jpg" alt="Sección estratigráfica de la muestra PC178.5 en luz ultravioleta con numeración de estratos" onclick="openLb(this.src,this.alt)"><figcaption>Sección · luz UV (numerada)</figcaption></figure>
+      </div>
+      <div style="display:grid; grid-template-columns:1.1fr 0.9fr; gap:2rem;">
+        <div class="strata-list">
+          <div class="strata-row"><div class="strata-idx">1</div><div>Preparación rojiza elaborada con tierra roja.</div></div>
+          <div class="strata-row"><div class="strata-idx">2</div><div>Dos estratos pictóricos de la capa azul original, a base de albayalde mezclado con un pigmento azul orgánico.</div></div>
+          <div class="strata-row"><div class="strata-idx">3</div><div>Estrato grisáceo, alterado estructural y cromáticamente, a base de <strong style="color:var(--blue);">azul esmalte</strong> con poco albayalde y carbonato de calcio.</div></div>
+          <div class="strata-row"><div class="strata-idx">4</div><div>Fina capa oscura muy orgánica, con pigmentos tierra, albayalde y carbonato de calcio.</div></div>
+          <div class="strata-row"><div class="strata-idx">5</div><div>Restos de barniz.</div></div>
+        </div>
+        <div class="sample-photos" style="margin-bottom:0; grid-template-columns:1fr;">
+          <figure><img src="muestra5_sem_superficial.jpg" alt="Imagen SEM y microanálisis EDX del estrato superficial de la muestra PC178.5, sin cobre detectado" onclick="openLb(this.src,this.alt)"><figcaption>SEM-EDX · estrato superficial</figcaption></figure>
+        </div>
+      </div>
+      <div class="sem-note">
+        <strong>Observación:</strong> en el estrato nº 4, de tonalidad oscura, los microanálisis <strong>no detectan cobre</strong> ni otros elementos que sugieran una veladura con pigmento verde (verdigrís, resinato de cobre). Podría tratarse de un antiguo estrato de recubrimiento orgánico oxidado.
+      </div>
+    </div>
+  </div>
+
+  <div class="note-box reveal" style="margin-top:2.5rem;">
+    <div class="note-box-label">Aglutinante · Pendiente de identificación</div>
+    <p>Está pendiente la identificación del aglutinante mediante <strong>cromatografía de gases-espectrometría de masas (GC-MS)</strong>. Por la presencia de repintes en las muestras analizadas existe contaminación de los aglutinantes de las intervenciones en las capas pictóricas subyacentes, lo que impide una identificación cromatográfica fiable del aglutinante original mediante este conjunto de muestras.</p>
+  </div>
 </section>
 
 <div class="divider"></div>
@@ -1098,6 +1394,11 @@
       <div class="conclusion-icon">4</div>
       <div class="conclusion-title">Técnica directa y construcción volumétrica clásica</div>
       <p class="conclusion-text">La ausencia de dibujo preparatorio extenso sugiere una ejecución directa sobre el lienzo. El volumen se construye con la oposición albayalde (luces) frente a tierras (sombras), técnica característica del manierismo.</p>
+    </div>
+    <div class="conclusion-card">
+      <div class="conclusion-icon">5</div>
+      <div class="conclusion-title">Intervención antigua documentada por SEM-EDX</div>
+      <p class="conclusion-text">El estudio de materiales confirma una intervención mediante una capa intermedia de yeso presente en todas las muestras, con repintes posteriores a base de albayalde, tierras, azul esmalte alterado y negro de huesos, cubiertos por dos estratos de barniz de resina terpénica.</p>
     </div>
   </div>
 </section>
